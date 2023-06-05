@@ -13,7 +13,7 @@
         <Button x:Name="btnSetAlert" Content="設定鬧鐘" HorizontalAlignment="Left" Margin="10,301,0,0" VerticalAlignment="Top" Height="40" Width="120" FontSize="18" Click="btnSetAlert_Click"/>
         <ComboBox x:Name="cmbHour" HorizontalAlignment="Left" Margin="300,313,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="cmbMin" HorizontalAlignment="Left" Margin="460,313,0,0" VerticalAlignment="Top" Width="120"/>
-        <MediaElement x:Name="meSound" HorizontalAlignment="Left" Height="136" Margin="640,276,0,0" VerticalAlignment="Top" Width="136" Volume="1" Source="/alert.wav"/>
+        <MediaElement x:Name="meSound" HorizontalAlignment="Left" Height="136" Margin="640,276,0,0" VerticalAlignment="Top" Width="136" Volume="1" Source="/alert.wav" MediaEnded="meSound_MediaEnded"/>
         <Button x:Name="btnCancelAlert" Content="取消鬧鐘" HorizontalAlignment="Left" Margin="155,301,0,0" VerticalAlignment="Top" Height="40" Width="120" FontSize="18" Click="btnCancelAlert_Click"/>
 
     </Grid>

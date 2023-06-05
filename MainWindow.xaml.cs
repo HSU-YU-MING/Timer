@@ -48,6 +48,8 @@ namespace Timer
 
             timerAlert.Interval = TimeSpan.FromSeconds(1);        // 這個計時器設定每一個刻度為1秒
             timerAlert.Tick += new EventHandler(timerAlert_tick); // 每一個時間刻度設定一個小程序timerAlert_tick
+            meSound.LoadedBehavior = MediaState.Stop; // 將鬧鐘聲音預先停止
+            btnCancelAlert.IsEnabled = false;
         }
 
         // timerx_tick事件：每一秒執行一次
@@ -82,6 +84,12 @@ namespace Timer
             timerAlert.Stop(); // 停止鬧鐘計時器
             btnSetAlert.IsEnabled = true;
             btnCancelAlert.IsEnabled = false;
+        }
+
+        private void meSound_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            meSound.Position = new TimeSpan(0, 0, 1);
+            meSound.LoadedBehavior = MediaState.Play;
         }
     }
 }
